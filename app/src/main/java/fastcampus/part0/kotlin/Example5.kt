@@ -3,6 +3,7 @@ package fastcampus.part0.kotlin
 fun main() {
     max(10, 3)
     min(10, 3)
+    isHoliday("월")
 }
 
 // 5-1. if
@@ -22,6 +23,14 @@ fun min(n: Int, m: Int) {
 }
 
 // 5-2. when
-fun isHoliday(dayOfWeek: String) {
+fun isHoliday(dayOfWeek: Any) {
+    val result = when (dayOfWeek) {
+        "토", "일" -> if (dayOfWeek == "토") "토요일 좋아 :)" else "내일 월요일..."
+        in listOf("월", "화") -> "버티자"
+        in 2..4 -> "숫자의 경우, 범위 값으로 사용 가능"
+        else -> false
+    }
 
+    println(result)
 }
+
