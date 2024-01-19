@@ -1,4 +1,4 @@
-package fastcampus.part0.kotlin
+package fastcampus.part0.kotlin.middle
 
 fun main() {
     // 1. 람다

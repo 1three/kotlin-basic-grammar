@@ -1,4 +1,4 @@
-package fastcampus.part0.kotlin
+package fastcampus.part0.kotlin.basic
 
 fun main() {
     val user = User("한슬", 24)

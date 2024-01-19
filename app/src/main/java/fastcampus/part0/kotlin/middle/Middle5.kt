@@ -1,4 +1,4 @@
-package fastcampus.part0.kotlin
+package fastcampus.part0.kotlin.middle
 
 // 5-1. data class : 데이터를 담기 위한 클래스
 // toString, hashCode, equals, copy 메서드 자동 생성

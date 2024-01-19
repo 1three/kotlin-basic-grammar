@@ -1,4 +1,4 @@
-package fastcampus.part0.kotlin
+package fastcampus.part0.kotlin.basic
 
 fun main() {
     // 7-1. list

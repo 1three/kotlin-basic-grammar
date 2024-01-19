@@ -1,4 +1,4 @@
-package fastcampus.part0.kotlin
+package fastcampus.part0.kotlin.basic
 
 fun main() {
     // 8. null (Kotlin의 null 안정성)

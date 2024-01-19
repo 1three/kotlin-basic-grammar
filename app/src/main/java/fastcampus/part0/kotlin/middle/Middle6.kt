@@ -1,6 +1,6 @@
-package fastcampus.part0.kotlin
+package fastcampus.part0.kotlin.middle
 
-import fastcampus.part0.kotlin.Book.Companion.NAME
+import fastcampus.part0.kotlin.middle.Book.Companion.NAME
 
 // 6-1. object : 클래스 정의와 동시에 객체 생성 (ex : error code)
 fun main() {

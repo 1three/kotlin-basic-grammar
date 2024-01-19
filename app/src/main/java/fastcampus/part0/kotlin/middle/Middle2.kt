@@ -1,4 +1,4 @@
-package fastcampus.part0.kotlin
+package fastcampus.part0.kotlin.middle
 
 fun main() {
     // 2. 확장함수 (기존 정의 클래스에 함수를 추가하는 기능)

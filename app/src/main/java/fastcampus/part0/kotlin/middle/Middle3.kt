@@ -1,4 +1,4 @@
-package fastcampus.part0.kotlin
+package fastcampus.part0.kotlin.middle
 
 fun main() {
     // 3. 범위 지정함수 (Scope function) : let, run, apply, also, with

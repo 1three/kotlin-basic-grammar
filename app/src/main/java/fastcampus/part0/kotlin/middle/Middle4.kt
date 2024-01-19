@@ -1,4 +1,4 @@
-package fastcampus.part0.kotlin
+package fastcampus.part0.kotlin.middle
 
 // 4. 초기화 지연 (lateinit, lazy)
 // 변수 선언 시 값을 지정하지 않고, 나중에 지정하 사용
