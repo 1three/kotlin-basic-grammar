@@ -1,37 +1,70 @@
 package fastcampus.part0.kotlin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.util.Log
+import android.widget.Button
+import android.widget.Toast
 
+/** Life cycle 테스트 시나리오
+ *
+ * 1. Activity 실행, 종료 시
+ * 2. 다른 App 실행 시
+ * 3. 다른 Activity 실행 시
+ * */
+
+// Life cycle 콜백 함수를 override 한 상태
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // 1-3. 람다 특징 : 일회용 함수
-        // View에서 setOnClickListener 사용 시, SAM interface로 구현
+        findViewById<Button>(R.id.button).setOnClickListener { navigateNextActivity() }
+        findViewById<Button>(R.id.button2).setOnClickListener { finish() }
 
-        // SAM (Single Abstract Method, 단일 추상 메서드)
-        // SAM 인터페이스 : 단 하나의 추상 메서드를 가진 인터페이스 (ex : setOnClickListener)
-        // Kotlin에서는 SAM 인터페이스를 아래와 같이 람다식으로 표현 가능
+        Toast.makeText(this, "라이프사이클 - Main : onCreate", Toast.LENGTH_SHORT).show()
+        Log.d("라이프사이클 - Main", "onCreate")
+    }
 
-        val view = View(this)
+    override fun onStart() {
+        super.onStart()
+        Toast.makeText(this, "라이프사이클 - Main : onStart", Toast.LENGTH_SHORT).show()
+        Log.d("라이프사이클 - Main", "onStart")
+    }
 
-        // 1-3-1. 직접 구현
-        // 익명 클래스를 통해 OnClickListener 설정
-//        view.setOnClickListener(
-//            new View . OnClickListener () {
-//                @Override
-//                public void onClick(View: View) {
-//                    // 클릭 시 수행할 동작을 구현
-//                }
-//            }
-//        )
+    override fun onRestart() {
+        super.onRestart()
+        Toast.makeText(this, "라이프사이클 - Main : onRestart", Toast.LENGTH_SHORT).show()
+        Log.d("라이프사이클 - Main", "onRestart")
+    }
 
-        // 1-3-2. 간단 표현
-        // 람다식을 통해 OnClickListener 설정
-        // {} 를 통해 OnClickListener의 onClick 함수 표현
-        view.setOnClickListener {}
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this, "라이프사이클 - Main : onResume", Toast.LENGTH_SHORT).show()
+        Log.d("라이프사이클 - Main", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(this, "라이프사이클 - Main : onPause", Toast.LENGTH_SHORT).show()
+        Log.d("라이프사이클 - Main", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Toast.makeText(this, "라이프사이클 - Main : onStop", Toast.LENGTH_SHORT).show()
+        Log.d("라이프사이클 - Main", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Toast.makeText(this, "라이프사이클 - Main : onDestroy", Toast.LENGTH_SHORT).show()
+        Log.d("라이프사이클 - Main", "onDestroy")
+    }
+
+    private fun navigateNextActivity() {
+        val intent = Intent(this, NextActivity::class.java)
+        startActivity(intent)
     }
 }
